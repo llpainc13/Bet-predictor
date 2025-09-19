@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Betting Predictor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏆 Sports Betting Predictor</h1>
+            <p>AI-Powered Predictions & Parlay Builder</p>
+        </header>
+
+        <div class="controls">
+            <select id="sportFilter">
+                <option value="upcoming">All Sports</option>
+                <option value="americanfootball_nfl">NFL</option>
+                <option value="basketball_nba">NBA</option>
+                <option value="baseball_mlb">MLB</option>
+                <option value="icehockey_nhl">NHL</option>
+            </select>
+            
+            <select id="bookmakerFilter">
+                <option value="all">All Bookmakers</option>
+                <option value="draftkings">DraftKings</option>
+                <option value="fanduel">FanDuel</option>
+                <option value="betmgm">BetMGM</option>
+            </select>
+
+            <button id="refreshBtn" class="btn-primary">🔄 Refresh Odds</button>
+        </div>
+
+        <div class="wager-section">
+            <h3>Wager Amount: $<input type="number" id="wagerAmount" value="100" min="1" max="10000"></h3>
+        </div>
+
+        <div id="predictions" class="predictions-grid">
+            <div class="loading">Loading predictions...</div>
+        </div>
+
+        <div class="parlay-section">
+            <h2>🎯 Smart Parlay Builder</h2>
+            <div id="parlayPicks" class="parlay-picks"></div>
+            <div class="parlay-summary">
+                <h3>Parlay Summary</h3>
+                <p>Total Odds: <span id="parlayOdds">-</span></p>
+                <p>Potential Win: $<span id="parlayWin">-</span></p>
+                <button id="buildParlay" class="btn-success">Build Parlay</button>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h2>📊 Prediction History</h2>
+            <div id="historyChart"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
